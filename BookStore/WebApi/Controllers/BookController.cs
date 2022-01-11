@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BookOperations.CreateBook;
+using WebApi.BookOperations.DeleteBook;
 using WebApi.BookOperations.GetBooks;
+using WebApi.BookOperations.UpdateBook;
 using WebApi.DbOperations;
 
 namespace WebApi.Controllers
@@ -23,11 +25,14 @@ namespace WebApi.Controllers
         public IActionResult GetBooks()
         {
              GetBooksQuery query = new GetBooksQuery(_context);
-             var result = query.Handle();
-           
-              if (result == null)
+             List<BookViewModel> result;
+              try
               {
-                   return BadRequest("Kitap Bulunamadı");
+                   result = query.Handle();
+              }
+              catch (Exception ex)
+              {
+                   return BadRequest(ex.Message);
               }
                return Ok(result);
         }
@@ -98,14 +103,18 @@ namespace WebApi.Controllers
         [HttpDelete]
         public IActionResult DeleteBook(int id)
         {
-            var  book = _context.Books.SingleOrDefault(x=>x.Id == id);
-            if (book is null)
+            DeleteBookCommand command = new DeleteBookCommand(_context);
+            try
             {
-                return BadRequest("Kitap bulunamadı");
+                 command.BookId = id;
+                 command.Handle();
             }
-             _context.Books.Remove(book);
-             _context.SaveChanges();
-            return Ok("Silindi");
+            catch (Exception ex)
+            {
+                
+                return BadRequest(ex.Message);
+            }
+            return Ok("Kitap Silindi");
         }
        
     }
