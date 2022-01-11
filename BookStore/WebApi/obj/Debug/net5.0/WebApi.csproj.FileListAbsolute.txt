@@ -38,3 +38,4 @@ D:\Patika.Dev_\Pratikler2\BookStore\WebApi\bin\Debug\net5.0\Microsoft.Extensions
 D:\Patika.Dev_\Pratikler2\BookStore\WebApi\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 D:\Patika.Dev_\Pratikler2\BookStore\WebApi\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 D:\Patika.Dev_\Pratikler2\BookStore\WebApi\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\Patika.Dev_\Pratikler2\BookStore\WebApi\bin\Debug\net5.0\FluentValidation.dll
