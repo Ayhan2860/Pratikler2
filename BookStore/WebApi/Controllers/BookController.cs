@@ -36,12 +36,19 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetBook(int id)
         {
-             var  book = _context.Books.Where(x=>x.Id == id).SingleOrDefault();
-              if (book is null)
+              GetBookDetailQuery query = new GetBookDetailQuery(_context);
+              BookDetailViewModel result;
+              try
               {
-                  return BadRequest("Kitap Bulunamadı");
+                   query.BookId = id;
+                   result = query.Handle();
               }
-              return Ok(book);
+              catch (Exception ex)
+              {
+                  
+                   return BadRequest(ex.Message);
+              }
+              return Ok(result);
         }
         
 
@@ -74,8 +81,9 @@ namespace WebApi.Controllers
              UpdateBookCommand command = new UpdateBookCommand(_context);
              try
              {
+                  command.BookId = id;
                   command.Model = updateBook;
-                  command.Handle(id);
+                  command.Handle();
              }
              catch (Exception ex)
              {
