@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using AutoMapper;
 using WebApi.Common;
 using WebApi.DbOperations;
 
@@ -7,12 +8,14 @@ namespace WebApi.BookOperations.GetBooks
 {
     public class GetBookDetailQuery
     {
-        private BookStoreDbContext _dbContext;
+        private readonly BookStoreDbContext _dbContext;
+        private readonly IMapper _mapper;
         public int BookId { get; set; }
 
-        public GetBookDetailQuery(BookStoreDbContext dbContext)
+        public GetBookDetailQuery(BookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public BookDetailViewModel Handle()
@@ -20,13 +23,8 @@ namespace WebApi.BookOperations.GetBooks
             var  book = _dbContext.Books.Where(x=>x.Id == BookId).SingleOrDefault();
             if (book is null) throw new InvalidOperationException("Kitap kaydı bulunamadı");
 
-            BookDetailViewModel viewModel = new BookDetailViewModel
-            {
-                    Title = book.Title,
-                    Genre = ((GenreEnum)book.GenreId).ToString(),
-                    PublishDate = book.PublishDate.Date.ToString("dd/MM/yyy"),
-                    PageCount = book.PageCount
-            };
+            BookDetailViewModel viewModel = _mapper.Map<BookDetailViewModel>(book);
+            
 
             return viewModel;
         }

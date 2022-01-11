@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using AutoMapper;
 using WebApi.DbOperations;
 
 namespace WebApi.BookOperations.UpdateBook
@@ -7,12 +8,16 @@ namespace WebApi.BookOperations.UpdateBook
     public class UpdateBookCommand
     { 
         public UpdateBookModel Model {get; set;}
+
         private  readonly BookStoreDbContext _dbContext;
+
+        private readonly IMapper _mapper;
         public int BookId { get; set; }
 
-        public UpdateBookCommand(BookStoreDbContext dbContext)
+        public UpdateBookCommand(BookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public void Handle()
