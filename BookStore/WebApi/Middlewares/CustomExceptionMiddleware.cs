@@ -26,7 +26,7 @@ namespace WebApi.Middlewares
             string message = "[Request]  HTTP " + context.Request.Method + " - " +  context.Request.Path;
             Console.WriteLine(message);
 
-            await _next(context);
+            await _next(context); 
             
             
             message = "[Response] HTTP " + context.Request.Method + " - " 
