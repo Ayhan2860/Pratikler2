@@ -21,7 +21,6 @@ namespace  WebApi.BookOperations.GetBooks
         public List<BookViewModel> Handle()
         {
             var books = _dbContext.Books.OrderBy(book=>book.Id).ToList<Book>();
-          
             List<BookViewModel> viewModels = _mapper.Map<List<BookViewModel>>(books);
           
             if (books.Count <= 0) throw new InvalidOperationException("Hiçbir Kitap bulunamadı");

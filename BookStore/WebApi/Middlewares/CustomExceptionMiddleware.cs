@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using WebApi.Sevices;
 
 namespace WebApi.Middlewares
 {
@@ -12,9 +13,11 @@ namespace WebApi.Middlewares
     public class CustomExceptionMiddleware
     {
         private readonly RequestDelegate _next;
-        public CustomExceptionMiddleware(RequestDelegate next)
+        private readonly ILoggerService _loggerService;
+        public CustomExceptionMiddleware(RequestDelegate next, ILoggerService loggerService)
         {
             _next = next;
+            _loggerService = loggerService;
         }
 
         public async Task Invoke(HttpContext context)
@@ -24,14 +27,14 @@ namespace WebApi.Middlewares
             {
                 
             string message = "[Request]  HTTP " + context.Request.Method + " - " +  context.Request.Path;
-            Console.WriteLine(message);
+            _loggerService.Write(message);
 
             await _next(context); 
-            
+            watch.Stop();
             
             message = "[Response] HTTP " + context.Request.Method + " - " 
             +  context.Request.Path + " Responded " + context.Response.StatusCode + " in "+ watch.Elapsed.TotalMilliseconds+" ms" ;
-             Console.WriteLine(message); 
+             _loggerService.Write(message);
             }
             catch (Exception ex)
             {
@@ -46,7 +49,7 @@ namespace WebApi.Middlewares
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             string message = $"[Error]  HTTP {context.Request.Method} - {context.Response.StatusCode} - ErrorMessage {ex.Message} In {watch.Elapsed.TotalMilliseconds}";
-            Console.WriteLine(message);
+             _loggerService.Write(message);
 
             
 

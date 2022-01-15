@@ -16,6 +16,7 @@ namespace WebApi.BookOperations.DeleteBook
         public void Handle()
         {
             var  book = _dbContext.Books.SingleOrDefault(x=>x.Id == BookId);
+            
             if (book is null) throw new InvalidOperationException("Kayıtlı Kitap Bulunamadı!");
 
             _dbContext.Books.Remove(book);
