@@ -1,7 +1,11 @@
+# .Net Core Patikası SQL Lessons 1st Homework Result
+- - -
+
+
 ### --1 Sort the data in the title and description columns in the movie table.
 + SELECT title, description FROM film;
 
-### --2 Sort the data in all columns in the movie table with the movie + length greater than 60 and less than 75
+### --2 Sort the data in all columns in the movie table with the movie  length greater than 60 and less than 75
 + SELECT * FROM film
 + WHERE length > 60 AND length < 75;
 
