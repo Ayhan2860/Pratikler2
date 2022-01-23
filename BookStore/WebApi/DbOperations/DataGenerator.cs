@@ -18,11 +18,11 @@ namespace WebApi.DbOperations
                  }
                  context.Genres.AddRange(
                      new Genre {Name= "PersonalGrowth"},
-                     new Genre {Name= "ScienceFiction"},
-                     new Genre {Name= "Noval"}
+                     new Genre {Name= "ScienceFiction",Status = false},
+                     new Genre {Name= "Noval", Status = true}
                  );
                  context.Books.AddRange(
-                     new Book { Title= "Heartland", GenreId=1,Status=true, PageCount = 224, AuthorId=1, PublishDate = new DateTime(2020,05,12)},
+                     new Book { Title= "Heartland", GenreId=1,Status=false, PageCount = 224, AuthorId=1, PublishDate = new DateTime(2020,05,12)},
                      new Book { Title= "My Last Beautiful Paper Left",Status=true, GenreId=2, AuthorId=2, PageCount = 224, PublishDate = new DateTime(2021,05,12)},
                      new Book { Title= "Animal Farm", GenreId=3,Status=true, PageCount = 224, AuthorId=3, PublishDate = new DateTime(2018,05,12)},
                      new Book { Title= "Granger's Cabin", GenreId=2,Status=true, PageCount = 224, AuthorId=4, PublishDate = new DateTime(2015,05,12)}

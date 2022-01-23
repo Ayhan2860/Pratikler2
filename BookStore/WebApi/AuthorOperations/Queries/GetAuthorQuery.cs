@@ -20,8 +20,9 @@ namespace WebApi.AuthorOperations.Queries
         }
 
         public List<GetAuthorsQueryModel> Handle()
-        {
-            var authors = _dbContext.Authors.Include(x=>x.Books).OrderBy(x=>x.AuthorId).ToList<Author>();
+        {  
+          
+            var authors = _dbContext.Authors.Include(x=>x.Books).Where(x=>x.Books.All(x=>x.Status == true)).OrderBy(x=>x.AuthorId).ToList<Author>();
             List<GetAuthorsQueryModel> viewAuthors = _mapper.Map<List<GetAuthorsQueryModel>>(authors);
          
             if (authors.Count <= 0) throw new InvalidOperationException("Hiçbir Yazar bulunamadı");

@@ -1,5 +1,8 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using WebApi.Common.Mappings.AuthorMappings;
+using WebApi.Common.Mappings.BookMappings;
+using WebApi.Common.Mappings.GenreMappings;
 using WebApi.DbOperations;
 
 namespace  Tests.WebApi.UnitTests.TestSetup
@@ -16,6 +19,9 @@ namespace  Tests.WebApi.UnitTests.TestSetup
             Context.Database.EnsureCreated();
             Context.AddBooks();
             Context.SaveChanges();
+
+            Mapper = new MapperConfiguration(cfg=>{cfg.AddProfile<GenreMappingProfile>();
+             cfg.AddProfile<BookMappingProfile>(); cfg.AddProfile<AuthorMappingProfile>(); }).CreateMapper();
         }
        
     }

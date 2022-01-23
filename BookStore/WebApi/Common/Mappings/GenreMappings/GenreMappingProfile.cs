@@ -11,6 +11,7 @@ namespace WebApi.Common.Mappings.GenreMappings
         {
             CreateMap<CreateGenreViewModel, Genre>();
             CreateMap<Genre, GetGenresViewModel>();
+            CreateMap<Genre,GetGenreDetailViewModel>();
         }
     }
 }
