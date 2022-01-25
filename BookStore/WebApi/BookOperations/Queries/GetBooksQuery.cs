@@ -25,6 +25,8 @@ namespace  WebApi.BookOperations.Queries
             List<BookViewModel> viewModels = _mapper.Map<List<BookViewModel>>(books);
           
             if (books.Count <= 0) throw new InvalidOperationException("Hiçbir Kitap bulunamadı");
+
+          
              return viewModels;
         }
     }

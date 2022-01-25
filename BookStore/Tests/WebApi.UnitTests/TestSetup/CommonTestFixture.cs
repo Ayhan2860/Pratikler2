@@ -18,6 +18,8 @@ namespace  Tests.WebApi.UnitTests.TestSetup
             Context = new BookStoreDbContext(options);
             Context.Database.EnsureCreated();
             Context.AddBooks();
+            Context.AddGenres();
+            Context.AddAuthors();
             Context.SaveChanges();
 
             Mapper = new MapperConfiguration(cfg=>{cfg.AddProfile<GenreMappingProfile>();

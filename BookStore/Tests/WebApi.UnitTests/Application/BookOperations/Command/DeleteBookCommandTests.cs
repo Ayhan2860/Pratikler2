@@ -20,13 +20,13 @@ namespace Tests.WebApi.UnitTests.Application.BookOperations.Command
 
 
         
-        [InlineData(2)]
-        [Theory]
-        public void WhenAllReadyExistBookIdGiven_InvalidOperationException_ShouldBeReturn(int id)
+       
+        [Fact]
+        public void WhenAllReadyExistDeleteBookIdGiven_InvalidOperationException_ShouldBeReturn()
         {
             //Arrenge
              DeleteBookCommand command = new DeleteBookCommand(_context);
-             command.BookId = id;
+             command.BookId = 0;
              //Act & Assert(Çalıştırma - Doğrulama)
              FluentActions
              .Invoking(() => command.Handle())
@@ -34,21 +34,15 @@ namespace Tests.WebApi.UnitTests.Application.BookOperations.Command
              
 
         }
-          [InlineData(2)]
+          [InlineData(1)]
           [Theory]
-          public void WhenAllReadyExistBookIdGiven_ValidOperationException_ShouldBeReturn(int id)
+          public void WhenAllReadyExistBookIdGiven_Book_ShouldBeDeleted(int id)
         {
             //Arrenge
              DeleteBookCommand command = new DeleteBookCommand(_context);
              command.BookId = id;
-             //Act 
+             //Act && Assert
              FluentActions.Invoking(()=>command.Handle()).Invoke();
-
-             // Assert
-             var book = _context.Books.SingleOrDefault(x=>x.Id == id);
-             book.Should().Be(book);
-            
-             
 
         }
     }

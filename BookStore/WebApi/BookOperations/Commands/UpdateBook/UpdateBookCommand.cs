@@ -30,6 +30,7 @@ namespace WebApi.BookOperations.Commands.UpdateBook
             book.PageCount = Model.PageCount != default ? Model.PageCount : book.PageCount;
             book.PublishDate = Model.PublishDate != default ? Model.PublishDate : book.PublishDate;
             book.Title = Model.Title  != default ? Model.Title : book.Title;
+            book.AuthorId = Model.AuthorId != default ? Model.AuthorId : book.AuthorId;
             _dbContext.SaveChanges();
          
         }
@@ -38,6 +39,8 @@ namespace WebApi.BookOperations.Commands.UpdateBook
     {
         public string Title { get; set; }
         public int GenreId { get; set; }
+        public int AuthorId { get; set; }
+        public bool Status { get; set; }
         public int PageCount { get; set; }
         public DateTime PublishDate { get; set; }
     }

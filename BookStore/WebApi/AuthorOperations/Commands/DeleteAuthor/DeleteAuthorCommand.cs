@@ -28,7 +28,7 @@ namespace WebApi.AuthorOperations.Commands.DeleteAuthor
                 else if (author is null)throw new InvalidOperationException("Yazar bulunamadı");
                
                 _dbContext.Authors.Remove(author);
-               
+               _dbContext.SaveChanges();
         }
     }
 }

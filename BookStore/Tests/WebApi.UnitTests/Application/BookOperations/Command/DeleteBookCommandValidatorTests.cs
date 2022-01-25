@@ -24,5 +24,21 @@ namespace Tests.WebApi.UnitTests.Application.BookOperations.Command
                 result.Errors.Count.Should().BeGreaterThan(0);
 
          }
+
+
+         [Fact]
+          public void WhenValidInputBookIdAreGiven_Validator_ShouldNotBeReturnErrors()
+         {
+                //Arrenge
+                DeleteBookCommand command = new DeleteBookCommand(null);
+                command.BookId = 1;
+                //Act
+                BookDeleteCommandValidator validator = new BookDeleteCommandValidator();
+                var result = validator.Validate(command);
+
+                //Assert
+                result.Errors.Count.Should().Be(0);
+
+         }
     }
 }

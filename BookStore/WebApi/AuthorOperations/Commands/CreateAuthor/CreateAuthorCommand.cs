@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using WebApi.DbOperations;
 using WebApi.Entities;
 
@@ -20,7 +21,8 @@ namespace WebApi.AuthorOperations.Commands.CreateAuthor
 
         public void Handle()
         {
-            var author = _dbContext.Authors.SingleOrDefault(x=>x.FirstName == Model.FirstName && x.LastName == Model.LastName);
+            var author = _dbContext.Authors.Include(x=>x.Books)
+            .SingleOrDefault(x=>x.FirstName == Model.FirstName && x.LastName == Model.LastName);
             if (author is not null) throw new InvalidOperationException("Bu Yazar Kayıtlı");
 
             author = _mapper.Map<Author>(Model);
