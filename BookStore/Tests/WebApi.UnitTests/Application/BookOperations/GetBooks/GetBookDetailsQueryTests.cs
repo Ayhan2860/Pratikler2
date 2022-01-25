@@ -44,13 +44,13 @@ namespace Tests.WebApi.UnitTests.Application.BookOperations.GetBooks
             //Arrenge
             
             GetBookDetailQuery query = new GetBookDetailQuery(_context,_mapper);
-            query.BookId = 2;
+            query.BookId = 4;
             var result = query.Handle(); 
 
             //Act 
              FluentActions.Invoking(() => query.Handle()).Invoke();
             //Assert
-            var book = _context.Books.SingleOrDefault(x=>x.Id ==2);
+            var book = _context.Books.SingleOrDefault(x=>x.Id ==4);
             var fullName = book.Author.FirstName +" " + book.Author.LastName;
 
             book.Should().NotBeNull();

@@ -21,6 +21,7 @@ namespace Tests.WebApi.UnitTests.Application.BookOperations.Command
              {
                 Title =title,
                 GenreId =genreId,
+                AuthorId = authorId,
                 PageCount = pageCount,
                 PublishDate = DateTime.Now.Date.AddYears(-1)
             };
