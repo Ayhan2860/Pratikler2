@@ -59,7 +59,31 @@ SELECT * FROM film WHERE title ILIKE ('%t%t%t%t%');
 ~~~sql
 SELECT * FROM film WHERE title LIKE ('C%') AND length > 90 AND rental_rate = 2.99;
 ~~~
+- - -
+# .Net Core Patikası SQL Lessons 4st Homework Result
+- - -
+### 1.Sort the different values in the replacement_cost column in the movie table.
+~~~sql
+SELECT DISTINCT replacement_cost FROM film;
+~~~
 
+### 2.How many different data are there in the replacement_cost column in the movie table?
+~~~sql
+SELECT COUNT(DISTINCT replacement_cost) FROM film;
+~~~
+### 3.How many of the movie titles in the movie table start with the character T and at the same time the rating is equal to 'G'?
+~~~sql
+SELECT COUNT(*) FROM film WHERE title LIKE ('T%') AND rating = 'G';
+~~~
+
+### 4.How many of the country names (country) in the country table consist of 5 characters?
+~~~sql
+SELECT COUNT(*) FROM country WHERE  LENGTH(country)  = 5;
+~~~
+### 5.How many of the city names in the city table end with the character 'R' or 'r'?
+~~~sql
+SELECT COUNT(*) FROM city WHERE city ILIKE ('%R');
+~~~
 <!-- ~~~sql
 
 ~~~ -->
