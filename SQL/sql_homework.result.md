@@ -100,6 +100,27 @@ SELECT * FROM film WHERE title LIKE '%n' ORDER BY length ASC OFFSET 5 LIMIT 5;
 ~~~sql
 SELECT * FROM customer  WHERE store_id = 1 ORDER BY last_name DESC LIMIT 4;
 ~~~
+# .Net Core Patikası SQL Lessons 6st Homework Result
+### 1.What is the average of the values in the rental_rate column in the movie table?
+~~~sql
+SELECT ROUND (AVG(rental_rate),4) From film;
+~~~
+### 2.How many of the movies in the movie table start with the character 'C'?
+~~~sql
+SELECT COUNT(title) FROM film WHERE title LIKE 'C%';
+~~~
+
+### 3.Among the movies in the movie table, how many minutes is the longest (length) movie with a rental_rate equal to 0.99?
+~~~sql
+SELECT MAX(length) FROM film WHERE rental_rate = 0.99;
+~~~
+### 4.How many different replacement_cost values are there for the movies longer than 150 minutes in the movie table?
+~~~sql
+SELECT COUNT (DISTINCT replacement_cost) FROM film WHERE length > 150;
+~~~
+
+
+
 
 <!-- ~~~sql
 
