@@ -143,6 +143,143 @@ GROUP BY country_id
 ORDER BY COUNT(*) DESC
 LIMIT 1;
 ~~~
-<!-- ~~~sql
 
-~~~ -->
+- - -
+# .Net Core Patikası SQL Lessons 8st Homework Result
+- - -
+### 1.Let's create a table in your patika.dev_test database with employee name column information id(INTEGER), name(VARCHAR(50)), birthDay(DATE), email(VARCHAR(100))
+~~~sql
+CREATE DATABASE patika.dev_test;
+CREATE TABLE employee 
+(
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50),
+	email VARCHAR(100),
+	birthDay DATE
+);
+~~~
+
+### 2.Let's add 50 pieces of data to the employee table we created using the 'Mockaroo' service.
+~~~sql
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Shane Courtes', 'scourtes0@usgs.gov', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Evania Newlands', 'enewlands1@diigo.com', '1922-07-15');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Trula Skehens', 'tskehens2@wikia.com', '1985-06-13');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Bernard Rene', 'brene3@blogs.com', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Aleen Badsworth', 'abadsworth4@ucsd.edu', '1946-11-23');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Sancho Endrighi', 'sendrighi5@rambler.ru', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Jena Martschke', 'jmartschke6@dropbox.com', '1987-02-11');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Leanna Langdridge', 'llangdridge7@tumblr.com', '1910-02-08');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Freida Waddam', 'fwaddam8@bloomberg.com', '1921-05-07');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Boonie Gascoigne', 'bgascoigne9@jimdo.com', '1961-04-22');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Athene Barribal', null, '1961-11-04');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Friederike Rumford', 'frumfordb@discuz.net', '1937-02-08');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Godfree Belliard', 'gbelliardc@cargocollective.com', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Salomo Mochan', 'smochand@harvard.edu', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Alastair Beaten', 'abeatene@dagondesign.com', '1947-07-08');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Garrick Ibberson', 'gibbersonf@amazon.com', '1919-08-03');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Cassandra Anmore', 'canmoreg@newyorker.com', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Bone Bernucci', 'bbernuccih@xrea.com', '1955-05-26');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Rahal Woodwin', 'rwoodwini@spotify.com', '1923-04-30');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Grazia Aynsley', 'gaynsleyj@php.net', '1943-08-14');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Eldridge Filson', 'efilsonk@dell.com', '1965-01-20');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Carmencita Sheaber', 'csheaberl@lycos.com', '1996-04-23');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Celestine Mathivon', 'cmathivonm@businesswire.com', '1944-12-26');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Demetris Daingerfield', 'ddaingerfieldn@deliciousdays.com', '1970-06-18');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Delores Harroll', 'dharrollo@ifeng.com', '1909-04-12');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Correy Duchart', 'cduchartp@noaa.gov', '1971-04-10');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Corinna Huke', 'chukeq@plala.or.jp', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Lela Vowells', 'lvowellsr@liveinternet.ru', '1952-12-31');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Jaquelin Blackbourn', 'jblackbourns@spotify.com', '1960-08-10');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Kathleen Antyshev', 'kantyshevt@sitemeter.com', '1948-11-15');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Lorne Edgerton', 'ledgertonu@slate.com', '1984-07-14');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Garik Berndtssen', 'gberndtssenv@sciencedirect.com', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Pate Baunton', 'pbauntonw@clickbank.net', '1942-03-01');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Christie Hopfer', 'chopferx@indiatimes.com', '1940-06-28');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Idelle Goldsmith', 'igoldsmithy@senate.gov', '1930-11-07');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Livia Giff', 'lgiffz@china.com.cn', '1977-07-17');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Rafaelia Dugan', 'rdugan10@stumbleupon.com', '1926-11-24');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Christel Sarjant', 'csarjant11@purevolume.com', '1920-03-26');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Fredelia Gowry', 'fgowry12@census.gov', '1960-06-10');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Boycie Dufton', null, '1995-01-03');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Heida Ellul', 'hellul14@digg.com', '1967-04-12');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Benedicto Beadham', null, '1981-09-24');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Ellsworth Storrah', 'estorrah16@oakley.com', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Sloane Kerwick', 'skerwick17@illinois.edu', '1925-04-23');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Nyssa Profit', 'nprofit18@google.cn', '1989-06-15');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Jacinthe Satterfitt', 'jsatterfitt19@ucoz.com', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Onida Shobrook', 'oshobrook1a@meetup.com', '1906-12-05');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Trudy Humphris', 'thumphris1b@ox.ac.uk', '1938-10-27');
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Dasie Gladdis', 'dgladdis1c@blogtalkradio.com', null);
+INSERT INTO employee (NAME, email, birthDay) VALUES ('Viviene Signore', 'vsignore1d@cnet.com', null);
+~~~
+
+### 3.Let's do 5 UPDATE operations that will update the other columns according to each of the columns.
+~~~sql
+-- update by name
+UPDATE employee 
+SET 
+    name = 'Mustafa Yılmaz',
+	birthDay = '1988-07-05',
+	email = 'mustafa@gmail.com'
+WHERE name = 'Viviene Signore';
+
+-- update by id
+UPDATE employee 
+SET 
+    name = 'Ahmet Karaman',
+	birthDay = '1982-10-11',
+	email = 'ahmet@gmail.com'
+WHERE id = 28;
+
+-- update by email
+UPDATE employee 
+SET 
+    name = 'Fatih Kara',
+	birthDay = '1987-09-02',
+	email = 'fatih@gmail.com'
+WHERE email = 'jsatterfitt19@ucoz.com';
+
+-- update by birthDay 
+UPDATE employee 
+SET 
+    name = 'Gökhan Düdükçü',
+	birthDay = '1986-06-11',
+	email = 'gokhan@gmail.com'
+WHERE birthDay = '1920-03-26';
+
+-- update by birthDay and name
+UPDATE employee 
+SET 
+    name = 'Soner Yıldız',
+	birthDay = '1988-04-08',
+	email = 'soner@gmail.com'
+WHERE birthDay = '1988-04-08' AND name = 'Soner Yıldız'
+RETURNING *;
+~~~
+### 4.Let's do 5 DELETE operations that will delete the relevant row according to each of the columns.
+ ~~~sql
+-- delete by id
+DELETE FROM employee 
+WHERE id = 5
+RETURNING *;
+
+-- delete by birthDay
+DELETE FROM employee 
+WHERE birthDay = '1906-12-05'
+RETURNING *;
+
+-- delete by name
+DELETE FROM employee 
+WHERE name = 'Godfree Belliard'
+RETURNING *;
+
+-- delete by email
+DELETE FROM employee 
+WHERE email = 'fgowry12@census.gov'
+RETURNING *;
+
+-- Delete data whose name starts with B and ends with e
+DELETE FROM employee 
+WHERE name LIKE 'B%e'
+RETURNING *;
+~~~ 
