@@ -326,4 +326,44 @@ SELECT rental.rental_id, customer.first_name, customer.last_name FROM rental
 FULL JOIN customer ON customer.customer_id = rental.customer_id;
 ~~~
 
+- - -
+# .Net Core Patikası SQL Lessons 10st Homework Result
+- - -
+### 1.Let's sort all the data for the first_name columns int the actor and customer tables.
+~~~sql
+SELECT first_name FROM actor
+UNION 
+SELECT first_name FROM customer;
+~~~
+### 2.Let's sort the intersecting data for the first_name columns in the actor and customer tables.
+~~~sql
+SELECT first_name FROM actor
+INTERSECT 
+SELECT first_name FROM customer;
+~~~
 
+### 3.For the first_name columns in the actor and customer tables, let's sort the data in the first table but not in the second table.
+~~~sql
+SELECT first_name FROM actor
+EXCEPT 
+SELECT first_name FROM customer;
+~~~
+### 4.Let's also do the first 3 queries for repeating data.
++ UNION ALL Operator
+~~~sql
+SELECT first_name FROM actor
+UNION ALL
+SELECT first_name FROM customer;
+~~~
++ INTERSECT ALL Operator
+~~~sql
+SELECT first_name FROM actor
+INTERSECT ALL
+SELECT first_name FROM customer;
+~~~
++ EXCEPT ALL Operator
+~~~sql
+SELECT first_name FROM actor
+EXCEPT ALL
+SELECT first_name FROM customer;
+~~~
