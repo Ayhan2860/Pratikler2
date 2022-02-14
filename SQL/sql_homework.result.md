@@ -327,7 +327,7 @@ FULL JOIN customer ON customer.customer_id = rental.customer_id;
 ~~~
 
 - - -
-# .Net Core Patikası SQL Lessons 10st Homework Result
+# .Net Core Patikası SQL Lessons 11st Homework Result
 - - -
 ### 1.Let's sort all the data for the first_name columns int the actor and customer tables.
 ~~~sql
@@ -367,3 +367,49 @@ SELECT first_name FROM actor
 EXCEPT ALL
 SELECT first_name FROM customer;
 ~~~
+
+- - -
+# .Net Core Patikası SQL Lessons 12st Homework Result
+- - -
+### 1.In the movie table, the movie length is shown in the length column. How many movies ar longer than the average movie length?
+~~~sql
+SELECT COUNT(DISTINCT length) 
+FROM film 
+WHERE length > (
+SELECT AVG(length) 
+FROM film
+);
+~~~
+
+### 2.How many movies have the highest rental_rate in the movie table?
+~~~sql
+SELECT COUNT(*) 
+FROM film 
+WHERE rental_rate = (
+SELECT MAX(rental_rate) 
+FROM film
+);
+~~~
+### 3.In the movie table, list the movies with the lowest rental_rate and the lowest replacement_cost values.
+~~~sql
+SELECT * FROM film 
+WHERE rental_rate= (
+SELECT MIN(rental_rate) FROM film) 
+AND 
+replacement_cost = 
+(SELECT MIN(replacement_cost) FROM film);
+~~~
+
+### 4.In the payment table, list the customers who make the most purchases.
+~~~sql
+SELECT customer.first_name, customer.last_name, 
+COUNT(payment.customer_id) AS payment_count 
+FROM payment
+LEFT JOIN customer 
+ON payment.customer_id = customer.customer_id
+GROUP BY payment.customer_id, customer.first_name, customer.last_name
+ORDER BY payment_count DESC;
+~~~
+
+
+
