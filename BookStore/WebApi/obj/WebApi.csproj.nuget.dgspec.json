@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Patika.Dev_\\Pratikler2\\BookStore\\WebApi\\WebApi.csproj": {}
+    "/Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/BookStore/WebApi/WebApi.csproj": {}
   },
   "projects": {
-    "D:\\Patika.Dev_\\Pratikler2\\BookStore\\WebApi\\WebApi.csproj": {
+    "/Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/BookStore/WebApi/WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Patika.Dev_\\Pratikler2\\BookStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "/Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/BookStore/WebApi/WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "D:\\Patika.Dev_\\Pratikler2\\BookStore\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\Predator\\.nuget\\packages\\",
-        "outputPath": "D:\\Patika.Dev_\\Pratikler2\\BookStore\\WebApi\\obj\\",
+        "projectPath": "/Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/BookStore/WebApi/WebApi.csproj",
+        "packagesPath": "/Users/ayhankaraman/.nuget/packages/",
+        "outputPath": "/Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/BookStore/WebApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Predator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ayhankaraman/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -83,6 +81,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[5.0.15, 5.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -91,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

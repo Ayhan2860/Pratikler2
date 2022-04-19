@@ -1,13 +1,16 @@
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using WebApi.DbOperations;
 using WebApi.TokenOperations.Models;
 using WebApi.UserOperations.Commands.CreateUser;
+using WebApi.UserOperations.Commands.RefreshToken;
 
 namespace WebApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class UserController:ControllerBase
@@ -45,6 +48,15 @@ namespace WebApi.Controllers
             validator.ValidateAndThrow(command);
             var token = command.Handle();
             return token;
+        }
+
+        [HttpGet("refreshToken")]
+        public ActionResult<Token> RefreshToken([FromQuery] string token)
+        {
+            RefreshTokenCommand command = new RefreshTokenCommand(_context,_configuration);
+            command.RefreshToken = token;
+            var result = command.Handle();
+            return result;
         }
     }
 }    
