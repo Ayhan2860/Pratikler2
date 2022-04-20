@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using MovieStoreUI.Application.MovieOperations.Commands.CreateMovie;
 using MovieStoreUI.Application.MovieOperations.Commands.DeleteMovie;
 using MovieStoreUI.Application.MovieOperations.Commands.UpdateMovie;
+using MovieStoreUI.Application.MovieOperations.Queries.GetMovieDetail;
+using MovieStoreUI.Application.MovieOperations.Queries.GetMovies;
 using MovieStoreUI.DbOperations;
 
 namespace MovieStoreUI.Controllers
@@ -17,6 +19,22 @@ namespace MovieStoreUI.Controllers
         {
             _context = context;
             _mapper = mapper;
+        }
+
+        [HttpGet]
+        public IActionResult GetAllMovies()
+        {
+            GetMoviesQueries query = new GetMoviesQueries(_context, _mapper);
+            var result = query.Handle();
+            return Ok(result);
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetByIdMovie(int id)
+        {
+            GetMovieQuery query = new GetMovieQuery(_context, _mapper);
+            query.MovieId = id;
+            var result = query.Handle();
+            return Ok(result);
         }
 
         [HttpPost]

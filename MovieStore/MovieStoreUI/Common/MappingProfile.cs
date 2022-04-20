@@ -7,6 +7,8 @@ using MovieStoreUI.Application.DirectorOperations.Commands.CreateDirector;
 using MovieStoreUI.Application.DirectorOperations.Queries.GetDirectorDetail;
 using MovieStoreUI.Application.DirectorOperations.Queries.GetDirectors;
 using MovieStoreUI.Application.MovieOperations.Commands.CreateMovie;
+using MovieStoreUI.Application.MovieOperations.Queries.GetMovieDetail;
+using MovieStoreUI.Application.MovieOperations.Queries.GetMovies;
 using MovieStoreUI.Entities;
 
 namespace MovieStoreUI.Common
@@ -40,6 +42,10 @@ namespace MovieStoreUI.Common
 
             /* Movie Mapping Operations Start */
             CreateMap<CreateMovieViewModel, Movie>();
+            CreateMap<Movie, GetMoviesViewModel>().ForMember(dest=> dest.Director, opt=>opt.MapFrom(src =>src.Director.FirstName +" " +src.Director.LastName))
+            .ForMember(dest=> dest.Genre, opt=>opt.MapFrom(src=>src.Genre.Name));
+            CreateMap<Movie, GetMovieViewModel>().ForMember(dest=> dest.Director, opt=>opt.MapFrom(src =>src.Director.FirstName +" " +src.Director.LastName))
+            .ForMember(dest=> dest.Genre, opt=>opt.MapFrom(src=>src.Genre.Name));
             /* Movie Mapping Operations End */
         }
     }
