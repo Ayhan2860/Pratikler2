@@ -40,3 +40,4 @@
 /Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/MovieStore/MovieStoreUI/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/MovieStore/MovieStoreUI/bin/Debug/net5.0/Newtonsoft.Json.dll
 /Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/MovieStore/MovieStoreUI/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
+/Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/MovieStore/MovieStoreUI/bin/Debug/net5.0/FluentValidation.dll

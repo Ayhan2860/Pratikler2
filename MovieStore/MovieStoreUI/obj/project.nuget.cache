@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kcz1jXAfmRTIKWaEZVQQ2bcW70PvrLtdCLwu9n7p0RVR/rwSttm+SE+mBKaN5udvZVJF94eFvXRpHWKXsJvVtw==",
+  "dgSpecHash": "c2CMcnnisIvdoJ1JvN4SyJpasuFZIp1wk6Cqlhjdx3ZNN01tBlCaZTz4UdYiNA509DFzq4qeDI1FpVKtwdDEZw==",
   "success": true,
   "projectFilePath": "/Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/MovieStore/MovieStoreUI/MovieStoreUI.csproj",
   "expectedPackageFiles": [
     "/Users/ayhankaraman/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "/Users/ayhankaraman/.nuget/packages/fluentvalidation/10.4.0/fluentvalidation.10.4.0.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/microsoft.aspnetcore.jsonpatch/5.0.15/microsoft.aspnetcore.jsonpatch.5.0.15.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/5.0.15/microsoft.aspnetcore.mvc.newtonsoftjson.5.0.15.nupkg.sha512",
