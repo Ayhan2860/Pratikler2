@@ -19,7 +19,7 @@ namespace MovieStoreUI.Application.MovieOperations.Queries.GetMovies
 
         public List<GetMoviesViewModel> Handle()
         {
-            var movies = _dbContext.Movies.Include(movie => movie.Director).Include(movie=>movie.Genre).ToList();
+            var movies = _dbContext.Movies.Include(movies=>movies.MovieActors).ThenInclude(movies=>movies.Actor).Include(movie => movie.Director).Include(movie=>movie.Genre).ToList();
             if(movies.Count < 1) throw new InvalidOperationException("Film verisi bulunamadı!");
             List<GetMoviesViewModel> viewModels = _mapper.Map<List<GetMoviesViewModel>>(movies);
             return viewModels;
@@ -33,6 +33,12 @@ namespace MovieStoreUI.Application.MovieOperations.Queries.GetMovies
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
         public string Director { get; set; } 
+
+        public List<Actors>  MovieActors { get; set; }
+        public  struct Actors
+        {
+            public string  FullName { get; set; }
+        }
 
     }
 }

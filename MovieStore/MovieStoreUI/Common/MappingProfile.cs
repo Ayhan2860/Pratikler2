@@ -43,9 +43,16 @@ namespace MovieStoreUI.Common
             /* Movie Mapping Operations Start */
             CreateMap<CreateMovieViewModel, Movie>();
             CreateMap<Movie, GetMoviesViewModel>().ForMember(dest=> dest.Director, opt=>opt.MapFrom(src =>src.Director.FirstName +" " +src.Director.LastName))
-            .ForMember(dest=> dest.Genre, opt=>opt.MapFrom(src=>src.Genre.Name));
+            .ForMember(dest=> dest.Genre, opt=>opt.MapFrom(src=>src.Genre.Name))
+            .ForMember(dest=>dest.MovieActors, opt=> opt.MapFrom(src=>src.MovieActors.Select(ma=>ma.Actor).ToList()));
+            CreateMap<Actor, GetMoviesViewModel.Actors>().ForMember(dest=>dest.FullName, opt=>opt.MapFrom(ma=>ma.FirstName + " " + ma.LastName));
+
+
+
             CreateMap<Movie, GetMovieViewModel>().ForMember(dest=> dest.Director, opt=>opt.MapFrom(src =>src.Director.FirstName +" " +src.Director.LastName))
-            .ForMember(dest=> dest.Genre, opt=>opt.MapFrom(src=>src.Genre.Name));
+            .ForMember(dest=> dest.Genre, opt=>opt.MapFrom(src=>src.Genre.Name))
+            .ForMember(dest=>dest.MovieActors,opt=>opt.MapFrom(src=>src.MovieActors.Select(ma=>ma.Actor).ToList()));
+            CreateMap<Actor, GetMovieViewModel.Actors>().ForMember(dest=>dest.FullName, opt=>opt.MapFrom(ma=>ma.FirstName + " " + ma.LastName));
             /* Movie Mapping Operations End */
         }
     }
