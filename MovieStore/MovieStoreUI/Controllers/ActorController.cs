@@ -1,4 +1,5 @@
 using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using MovieStoreUI.Application.ActorOperations.Commands.CreateActor;
 using MovieStoreUI.Application.ActorOperations.Commands.DeleteActor;
@@ -42,7 +43,9 @@ namespace MovieStoreUI.Controllers
         public IActionResult CreateActor([FromBody]CreateActorViewModel actor)
         {
             CreateActorCommand command = new CreateActorCommand(_context, _mapper);
+            CreateActorValidator validator = new CreateActorValidator();
             command.Model = actor;
+            validator.ValidateAndThrow(command);
             command.Handle();
             return Ok(actor.FirstName + " " + actor.LastName +" "+ " İsimli Aktor Eklendi");
         }

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+UDOH3PnPEIopfXEuUNPEO3OYKF5TfmoMVkOtEl7vFf+PeOrWZvSiahCs/dtEuZa1Vvz85IkEmuwvpb+LjelNw==",
+  "dgSpecHash": "TLDadAbFs0fKs5sCJGPr+4gpdrMZBgZuPjKbrfCxgNXCCdCmg9eFIlYci8sO6OIOgsuhBGgh6XZbRG6KBMQg9w==",
   "success": true,
   "projectFilePath": "/Users/ayhankaraman/Documents/Developer_Works/Patika.Dev_/Pratikler2/BookStore/WebApi/WebApi.csproj",
   "expectedPackageFiles": [
-    "/Users/ayhankaraman/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
+    "/Users/ayhankaraman/.nuget/packages/automapper/11.0.1/automapper.11.0.1.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
-    "/Users/ayhankaraman/.nuget/packages/fluentvalidation/10.3.6/fluentvalidation.10.3.6.nupkg.sha512",
+    "/Users/ayhankaraman/.nuget/packages/fluentvalidation/10.4.0/fluentvalidation.10.4.0.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/5.0.13/microsoft.aspnetcore.authentication.jwtbearer.5.0.13.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/microsoft.entityframeworkcore/5.0.6/microsoft.entityframeworkcore.5.0.6.nupkg.sha512",
@@ -38,10 +38,7 @@
     "/Users/ayhankaraman/.nuget/packages/system.diagnostics.diagnosticsource/5.0.1/system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/system.identitymodel.tokens.jwt/6.7.1/system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
     "/Users/ayhankaraman/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "/Users/ayhankaraman/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
-    "/Users/ayhankaraman/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "/Users/ayhankaraman/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "/Users/ayhankaraman/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.15/microsoft.netcore.app.host.osx-x64.5.0.15.nupkg.sha512"
+    "/Users/ayhankaraman/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
